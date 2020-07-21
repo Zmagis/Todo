@@ -1,0 +1,22 @@
+.AddNewTodo {
+  display: flex;
+  justify-content: center;
+}
+.AddNewTodo input,
+.AddNewTodo button {
+  /* padding: 10px 15px; */
+  margin: 2px;
+  border: none;
+}
+.AddNewTodo button {
+  /* border-radius: 8px; */
+  /* cursor: pointer; */
+  /* background-color: rgb(31, 52, 53); */
+  /* color: azure; */
+}
+.AddNewTodo button:hover {
+  background-color: rgba(31, 52, 53, 0.774);
+}
+.AddNewTodo input {
+  border-bottom: 1px solid rgb(31, 52, 53);
+}

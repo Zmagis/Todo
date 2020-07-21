@@ -1,0 +1,17 @@
+.Todos {
+  width: 300px;
+  margin: 10px auto;
+  height: 75vh;
+  background-color: rgba(65, 105, 225, 0.479);
+  color: azure;
+  border-radius: 4px;
+  padding: 10px;
+}
+.Todos input {
+  border: none;
+  background-color: transparent;
+  color: azure;
+  font-size: large;
+  width: 100%;
+  text-align: center;
+}

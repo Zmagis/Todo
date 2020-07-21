@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import { TodoItems } from './components/todoItems/TodoItems';
+import { AddNewTodo } from './components/form/AddNewTodo';
+
+import './App.less';
+
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<Array<Todo>>([]);
+
+  const toggleTodo: ToggleTodo = (clickedTodo) => {
+    const clicked = todos.findIndex((todo) => todo === clickedTodo);
+    const newTodos = [...todos];
+    newTodos[clicked].complete = !newTodos[clicked].complete;
+    setTodos(newTodos);
+  };
+  const addTodo: AddTodo = (newTodo) => {
+    setTodos([...todos, { text: newTodo, complete: false }]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>TODO</h1>
+
+      <TodoItems todos={todos} toggleTodo={toggleTodo} />
+      <AddNewTodo addTodo={addTodo} />
     </div>
   );
-}
+};
 
 export default App;

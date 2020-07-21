@@ -1,0 +1,9 @@
+.TodoItem {
+  display: flex;
+  color: azure;
+  padding: 5px;
+}
+
+.complete {
+  text-decoration: line-through;
+}
